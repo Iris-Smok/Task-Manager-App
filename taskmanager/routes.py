@@ -9,6 +9,7 @@ from taskmanager.models import Category, Task  # noqa
 @app.route("/")
 def home():
     """
-    base.html
+    home page, when user visit our site, they're
+    brought to the tasks page
     """
-    return render_template("base.html")
+    return render_template("tasks.html")
