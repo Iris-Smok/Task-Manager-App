@@ -6,4 +6,4 @@ def home():
     """
     Return base.html
     """
-    return render_template("base.html")  
+    return render_template("base.html")
