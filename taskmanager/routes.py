@@ -1,7 +1,7 @@
 """
 routes.py
 """
-from flask import render_template
+from flask import render_template, request, redirect, url_for
 from taskmanager import app, db  # noqa
 from taskmanager.models import Category, Task  # noqa
 
@@ -32,4 +32,9 @@ def add_category():
     the form will attempt to post the data into the database.
     This is why we need to specify both methods in the app route
     """
+    if request.method == "POST":
+        category = Category(category_name=request.form.get("category_name"))
+        db.session.add(category)
+        db.session.commit()
+        return redirect(url_for("categories"))
     return render_template("add_category.html")
