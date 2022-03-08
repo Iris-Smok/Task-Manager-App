@@ -1,8 +1,13 @@
+"""
+models.py
+"""
 from taskmanager import db
 
 
 class Category(db.Model):
-    # schema for the Category model
+    """
+    schema for the Category model
+    """
     id = db.Column(db.Integer, primary_key=True)
     category_name = db.Column(db.String(25), unique=True, nullable=False)
     tasks = db.relationship("Task", backref="category", cascade="all, delete", lazy=True)
@@ -13,7 +18,9 @@ class Category(db.Model):
 
 
 class Task(db.Model):
-    # schema for the Task model
+    """
+    schema for the Category model
+    """
     id = db.Column(db.Integer, primary_key=True)
     task_name = db.Column(db.String(50), unique=True, nullable=False)
     task_description = db.Column(db.Text, nullable=False)

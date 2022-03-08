@@ -20,7 +20,7 @@ def categories():
     """
     Categories.html
     """
-    categories=list(Category.query.order_by(Category.category_name).all())
+    categories = list(Category.query.order_by(Category.category_name).all())
     return render_template("categories.html", categories=categories)
 
 
@@ -52,3 +52,14 @@ def edit_category(category_id):
         db.session.commit()
         return redirect(url_for("categories"))
     return render_template("edit_category.html", category=category)
+
+
+@app.route("/delete_category/<int:category_id>")
+def delete_category(category_id):
+    """
+    delete categories
+    """
+    category = Category.query.get_or_404(category_id)
+    db.session.delete(category)
+    db.session.commit()
+    return redirect(url_for("categories"))
