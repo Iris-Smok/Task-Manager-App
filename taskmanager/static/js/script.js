@@ -4,10 +4,10 @@ document.addEventListener("DOMContentLoaded", function () {
   M.Sidenav.init(sidenav);
 
   // datepicker initialization
-  var datapicker = document.querySelectorAll(".datepicker");
-  M.Datepicker.init(datapicker, {
-    format: "dd mm, yyyy",
-    i18n: { dpne: "Select" },
+  let datepicker = document.querySelectorAll(".datepicker");
+  M.Datepicker.init(datepicker, {
+    format: "dd mmmm, yyyy",
+    i18n: { done: "Select" },
   });
 
   // select initialization
