@@ -29,6 +29,7 @@
                     <div class="modal-content">
                         <h4>Are you sure you wnat to delete this Category?</h4>
                         <p>This action cannot be undone.</p>
+                        <p class="red-text">WARNING: this will delete all related tasks!.</p>
                     </div>
                     <div class="modal-footer">
                         <a href="{{ url_for('delete_category', category_id=category.id) }}" class="btn red">Delete</a>

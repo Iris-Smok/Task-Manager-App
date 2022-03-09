@@ -25,6 +25,19 @@
             <p>{{ task.task_description }}</p>
             <p>
                 <a href="{{ url_for('edit_task', task_id=task.id)}}" class="btn green accent-4">Edit</a>
+                <a href="#modal-{{ task.id }}" class="btn red modal-trigger">Delete</a>
+
+                <!-- Modal -->
+                <div id="modal-{{ task.id }}" class="modal">
+                    <div class="modal-content">
+                        <h4>Are you sure you wnat to delete this Task?</h4>
+                        <p>This action cannot be undone.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <a href="{{ url_for('delete_task', task_id=task.id) }}" class="btn red">Delete</a>
+                        <a href="#" class="btn green accent-4 modal-close">Cencel</a>
+                    </div>
+                </div>
             </p>
         </div>
     </li>
