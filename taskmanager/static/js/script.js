@@ -13,12 +13,12 @@ document.addEventListener("DOMContentLoaded", function () {
   // select initialization
   var selects = document.querySelectorAll("select");
   M.FormSelect.init(selects);
-});
 
-// modal initialization
-document.addEventListener("DOMContentLoaded", function () {
-  var elems = document.querySelectorAll(".modal");
-  var instances = M.Modal.init(elems, (opacity = 0.5));
-});
+  // collapsible initialization
+  var collapsibles = document.querySelectorAll(".collapsible");
+  M.Collapsible.init(collapsibles);
 
-//
+  // modal initialization
+  var modal = document.querySelectorAll(".modal");
+  M.Modal.init(modal, (opacity = 0.5));
+});

@@ -12,7 +12,8 @@ def home():
     home page, when user visit our site, they're
     brought to the tasks page
     """
-    return render_template("tasks.html")
+    tasks = list(Task.query.order_by(Task.id).all())
+    return render_template("tasks.html", tasks=tasks)
 
 
 @app.route("/categories")
